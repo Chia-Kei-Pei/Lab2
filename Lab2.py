@@ -14,7 +14,6 @@ def display_main_menu():
 
 
 def get_user_input():
-    print("get_user_input")
     nums_raw_input = input()
     nums_string = nums_raw_input.split(",")
     nums_float = [float(x) for x in nums_string]
@@ -22,7 +21,6 @@ def get_user_input():
 
 
 def calc_average_temperature(temp_readings):
-    print("calc_average")
     total = 0
     num_of_readings = 0
     for num in temp_readings:
@@ -32,8 +30,7 @@ def calc_average_temperature(temp_readings):
 
 
 def find_min_max(temp_readings):
-    print("find_min_max")
-    min_temp = max_temp = 0
+    min_temp = max_temp = temp_readings[0]
     for num in temp_readings:
         if min_temp > num:
             min_temp = num
@@ -42,11 +39,32 @@ def find_min_max(temp_readings):
     return [min_temp, max_temp]
 
 
-def sort_temperature():
-    print("sort_temperature")
+def sort_temperature(temp_readings):
+    temp_readings.sort()
+    return temp_readings
 
 
-def calc_median_temperature():
-    print("calc_median_temperature")
+import math
 
-print(get_user_input())
+
+def calc_median_temperature(temp_readings):
+    temp_reads = sort_temperature(temp_readings)
+    median_index = math.ceil(len(temp_reads) / 2) - 1
+    # print("median_index = " + str(median_index))
+    if len(temp_readings) % 2 == 1:
+        return temp_reads[median_index]
+    else:
+        return 0.5 * (temp_reads[median_index] + temp_reads[median_index + 1])
+
+
+# testing
+display_main_menu()
+
+temperature_list = get_user_input()
+print("The temperature list is " + str(temperature_list))
+
+print("The average temperature is " + str(calc_average_temperature(temperature_list)))
+
+print("The min and max temperatures are " + str(find_min_max(temperature_list)))
+
+print("The median temperature is " + str(calc_median_temperature(temperature_list)))
