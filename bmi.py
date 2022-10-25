@@ -18,4 +18,7 @@ def calculate_bmi(height, weight):
 
     print("Weight Classification = " + weight_class)
 
+
 calculate_bmi(weight=57, height=1.73)
+
+
