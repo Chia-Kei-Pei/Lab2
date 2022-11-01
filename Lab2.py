@@ -58,13 +58,13 @@ def calc_median_temperature(temp_readings):
 
 
 # testing
-display_main_menu()
-
-temperature_list = get_user_input()
-print("The temperature list is " + str(temperature_list))
-
-print("The average temperature is " + str(calc_average_temperature(temperature_list)))
-
-print("The min and max temperatures are " + str(find_min_max(temperature_list)))
-
-print("The median temperature is " + str(calc_median_temperature(temperature_list)))
+# display_main_menu()
+#
+# temperature_list = get_user_input()
+# print("The temperature list is " + str(temperature_list))
+#
+# print("The average temperature is " + str(calc_average_temperature(temperature_list)))
+#
+# print("The min and max temperatures are " + str(find_min_max(temperature_list)))
+#
+# print("The median temperature is " + str(calc_median_temperature(temperature_list)))
